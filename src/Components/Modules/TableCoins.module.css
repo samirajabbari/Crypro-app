@@ -13,3 +13,9 @@
   align-items: center;
   justify-content: center;
 }
+
+@media (max-width: 560) {
+  .container tbody {
+    overflow-x: scroll;
+  }
+}

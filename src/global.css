@@ -7,6 +7,8 @@ body {
   margin: auto;
   max-width: 1200px;
   min-height: 100vh;
+  align-items: center;
+  justify-content: center;
   padding: 10px;
   background-color: #131315;
   color: #fff;

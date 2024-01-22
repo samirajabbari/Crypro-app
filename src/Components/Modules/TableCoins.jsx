@@ -10,7 +10,7 @@ function TableCoins({ coins, loader }) {
       {loader ? (
         <MoonLoader color="#36d786" />
       ) : (
-        <table className="table table-dark table-striped">
+        <table className="table table-dark table-striped ">
           <thead>
             <tr>
               <th scope="col">Coin</th>

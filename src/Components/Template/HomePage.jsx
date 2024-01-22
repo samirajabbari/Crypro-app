@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 //Component - Files
 import TableCoins from "../Modules/TableCoins.jsx";
 import { CryptoApi } from "../Services/crypto.js";
+import Pagination from "../Modules/pagination.jsx";
 
 function HomePage() {
   const [coins, setCoins] = useState([]);
@@ -26,6 +27,7 @@ function HomePage() {
   return (
     <div>
       <TableCoins coins={coins} loader={loader} />
+      <Pagination />
     </div>
   );
 }
