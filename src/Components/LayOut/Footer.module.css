@@ -1,0 +1,32 @@
+.container {
+  height: 3rem;
+  display: flex;
+  flex-direction: column;
+  margin: 2rem 0;
+  color: #ffffff;
+  align-items: center;
+  justify-content: center;
+  background-color: #222020;
+  border-radius: 0.3rem;
+}
+.container h1 {
+  display: flex;
+  color: blue;
+  font-size: 30px;
+  font-weight: 700;
+  margin: 0;
+}
+.container a {
+  font-weight: 400;
+  color: blue;
+  margin: 2px 0;
+  padding: 2px;
+  background-color: #83aeff;
+  border-radius: 3px;
+  text-decoration: none;
+  transition: all 0.3s;
+}
+.container a:hover {
+  background-color: blue;
+  color: white;
+}
