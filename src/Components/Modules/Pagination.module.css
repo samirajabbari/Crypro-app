@@ -39,7 +39,15 @@
   justify-content: center;
   border: 1px solid white;
   border-radius: 0.2rem;
+  cursor: pointer;
 }
 .container .spiliter {
   border: none;
+}
+.disable {
+  opacity: 0.3;
+}
+.selected {
+  background-color: #00ff95;
+  color: black;
 }
