@@ -13,6 +13,7 @@ function TableRow({
     price_change_percentage_24h: priceChange,
     total_volume,
   },
+  monySymbol,
 }) {
   return (
     <tr className={styles.trdirection}>
@@ -23,7 +24,10 @@ function TableRow({
         </div>
       </td>
       <td>{name}</td>
-      <td>${current_price.toLocaleString()}</td>
+      <td>
+        {monySymbol}
+        {current_price.toLocaleString()}
+      </td>
       <td style={priceChange > 0 ? { color: "#008000" } : { color: "#ff4545" }}>
         {priceChange.toFixed(2)}%
       </td>
