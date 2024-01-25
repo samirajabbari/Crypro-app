@@ -7,4 +7,7 @@ function CryptoApi(page, currency) {
 function SearchApi(search) {
   return `${BACIC_Address}/search?query=${search}&x_cg_demo_api_key=${API_KEY}`;
 }
-export { CryptoApi,SearchApi };
+function ChartApi(id, currency, days) {
+  return `${BACIC_Address}/coins/${id}/market_chart?vs_currency=${currency}&days=${days}/${API_KEY}`;
+}
+export { CryptoApi, SearchApi, ChartApi };

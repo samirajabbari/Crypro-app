@@ -1,11 +1,14 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import styles from "./TableCoins.module.css";
+import { ChartApi } from "../Services/crypto";
+import { useEffect } from "react";
 
 import chartDown from "../../assets/chart-down.svg";
 import chartup from "../../assets/chart-up.svg";
 
 function TableRow({
   coin: {
+    id,
     symbol,
     image,
     name,
@@ -14,11 +17,29 @@ function TableRow({
     total_volume,
   },
   monySymbol,
+  setShowModal,
+  SetChartData,
+  currency,
 }) {
+  const modalHandler = () => {
+    const fetchChart = async () => {
+      try {
+        const res = await fetch(ChartApi(id, currency, "1"));
+        const json = await res.json();
+        SetChartData(json);
+        // console.log(json);
+        setShowModal(true);
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    fetchChart();
+  };
+
   return (
     <tr className={styles.trdirection}>
       <td>
-        <div className={styles.coinCountainer}>
+        <div className={styles.coinCountainer} onClick={modalHandler}>
           <img src={image} alt="icon" className={styles.icon}></img>
           {symbol.toUpperCase()}
         </div>

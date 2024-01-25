@@ -4,7 +4,15 @@ import styles from "./TableCoins.module.css";
 import TableRow from "./TableRow";
 import { MoonLoader } from "react-spinners";
 
-function TableCoins({ coins, loader , monySymbol}) {
+function TableCoins({
+  coins,
+  loader,
+  monySymbol,
+  setShowModal,
+  SetcoinId,
+  SetChartData,
+  currency,
+}) {
   return (
     <div className={styles.container}>
       {loader ? (
@@ -23,7 +31,17 @@ function TableCoins({ coins, loader , monySymbol}) {
           </thead>
           <tbody>
             {coins.map((coin) => {
-              return <TableRow key={coin.id} coin={coin} monySymbol={monySymbol} />;
+              return (
+                <TableRow
+                  key={coin.id}
+                  coin={coin}
+                  monySymbol={monySymbol}
+                  setShowModal={setShowModal}
+                  SetcoinId={SetcoinId}
+                  SetChartData={SetChartData}
+                  currency={currency}
+                />
+              );
             })}
           </tbody>
         </table>

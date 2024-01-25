@@ -6,6 +6,7 @@ import { CryptoApi } from "../Services/crypto.js";
 import Pagination from "../Modules/pagination.jsx";
 import SearchBar from "../Modules/SearchBar.jsx";
 import Modals from "../Modules/Modals.jsx";
+import styles from "./HomePage.module.css";
 
 function HomePage() {
   const [coins, setCoins] = useState([]);
@@ -13,7 +14,9 @@ function HomePage() {
   const [page, setPage] = useState(1);
   const [currency, setCurrency] = useState("USD");
   const [monySymbol, setMonySymbol] = useState("$");
-  const [showModal, setShowModal] = useState(true);
+  const [showModal, setShowModal] = useState(false);
+  const [coinId, SetcoinId] = useState([]);
+  const [chartData, SetChartData] = useState([]);
 
   useEffect(() => {
     setLoader(true);
@@ -32,14 +35,24 @@ function HomePage() {
 
   //Body
   return (
-    <div>
-      {showModal && <Modals />}
+    <div className={styles.container}>
+      {showModal && (
+        <Modals setShowModal={setShowModal} chartData={chartData} />
+      )}
       <SearchBar
         currency={currency}
         setCurrency={setCurrency}
         setMonySymbol={setMonySymbol}
       />
-      <TableCoins coins={coins} loader={loader} monySymbol={monySymbol} />
+      <TableCoins
+        coins={coins}
+        loader={loader}
+        monySymbol={monySymbol}
+        setShowModal={setShowModal}
+        SetcoinId={SetcoinId}
+        SetChartData={SetChartData}
+        currency={currency}
+      />
       <Pagination page={page} setPage={setPage} />
     </div>
   );
