@@ -14,7 +14,7 @@ function Chart({ type, data }) {
     <div>
       <div className={styles.graph}>
         <ResponsiveContainer width="100%" height="100%">
-          <LineChart width="38rem" height="24rem" data={data}>
+          <LineChart width="36rem" height="24rem" data={data}>
             <Line
               type="monotone"
               stroke="#00ff95"
@@ -22,9 +22,16 @@ function Chart({ type, data }) {
               strokeWidth="1px"
             />
             <CartesianGrid stroke="#404042" />
-            <YAxis dataKey={type} domain={["auto", "auto"]} />
+            <YAxis
+              dataKey={type}
+              domain={["datamin", "datamax"]}
+              tickFormatter={(value) => `${value.toFixed(1)}`}
+            />
             <XAxis dataKey="date" hide />
-            <Tooltip />
+            <Tooltip
+              labelFormatter={(value) => `Date: ${value}`}
+              formatter={(value) => `$${value.toFixed(1)}`}
+            />
             <Legend />
           </LineChart>
         </ResponsiveContainer>

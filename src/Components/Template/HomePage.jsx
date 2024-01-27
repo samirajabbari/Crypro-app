@@ -37,7 +37,11 @@ function HomePage() {
   return (
     <div className={styles.container}>
       {showModal && (
-        <Modals setShowModal={setShowModal} chartData={chartData} />
+        <Modals
+          setShowModal={setShowModal}
+          chartData={chartData}
+          monysymbol={monySymbol}
+        />
       )}
       <SearchBar
         currency={currency}

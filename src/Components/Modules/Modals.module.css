@@ -13,7 +13,7 @@
   z-index: 3;
   backdrop-filter: blur(1px);
 }
-.container button {
+.container .closed {
   position: absolute;
   top: 0;
   left: 0;
@@ -26,17 +26,63 @@
 }
 .chart {
   display: flex;
+  flex-direction: column;
   justify-content: flex-start;
   width: 40rem;
-  height: 25rem;
+  height: fit-content;
   top: auto;
   background: rgba(0, 0, 0, 0.7);
   border: 2px solid #444444;
   border-radius: 1rem;
   align-items: center;
   justify-content: center;
+ 
 }
 .graph {
   width: 38rem;
   height: 24rem;
+}
+.curencyInfo {
+  width: 100%;
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+  margin-left: 3rem;
+}
+.curencyInfo img {
+  width: 1.5rem;
+  height: 1.5rem;
+  margin-right: 0.3rem;
+}
+.ChangeType {
+  display: flex;
+  width: 100%;
+  margin-bottom: 1rem;
+  margin-left: 3rem;
+  align-items: center;
+  justify-content: center;
+}
+.ChangeType button {
+  background-color: #065031;
+  border: 1px solid;
+  color: white;
+  padding: 0 1rem;
+  margin-left: 0.5rem;
+  background-color: transparent;
+  border-radius: 0.3rem;
+}
+.ChangeType button:hover {
+  background-color: #065031;
+}
+.detailes {
+  display: flex;
+  flex-direction: row;
+}
+.detaile {
+  display: flex;
+  flex-direction: row;
+  margin: 0 1rem;
+}
+.detaile span {
+  color: #00ff95;
+  margin-left: 0.3rem;
 }

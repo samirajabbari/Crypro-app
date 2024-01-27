@@ -6,8 +6,8 @@ import { useEffect } from "react";
 import chartDown from "../../assets/chart-down.svg";
 import chartup from "../../assets/chart-up.svg";
 
-function TableRow({
-  coin: {
+function TableRow({ coin, monySymbol, setShowModal, SetChartData, currency }) {
+  const {
     id,
     symbol,
     image,
@@ -15,18 +15,14 @@ function TableRow({
     current_price,
     price_change_percentage_24h: priceChange,
     total_volume,
-  },
-  monySymbol,
-  setShowModal,
-  SetChartData,
-  currency,
-}) {
+  } = coin;
+
   const modalHandler = () => {
     const fetchChart = async () => {
       try {
-        const res = await fetch(ChartApi(id, currency, "1"));
+        const res = await fetch(ChartApi(id, currency, "7"));
         const json = await res.json();
-        SetChartData(json);
+        SetChartData({ ...json, coin });
         // console.log(json);
         setShowModal(true);
       } catch (error) {

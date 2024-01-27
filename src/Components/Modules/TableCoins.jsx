@@ -12,6 +12,7 @@ function TableCoins({
   SetcoinId,
   SetChartData,
   currency,
+  
 }) {
   return (
     <div className={styles.container}>

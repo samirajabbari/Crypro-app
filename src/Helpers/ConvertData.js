@@ -1,9 +1,9 @@
 const convertData = (data, dType) => {
-  
   const converted = data[dType].map((item) => {
     return {
       date: item[0],
       [dType]: item[1],
+
     };
   });
   return converted;
